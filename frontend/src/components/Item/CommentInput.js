@@ -23,7 +23,7 @@ const CommentInput = (props) => {
   const createComment = async (ev) => {
     ev.preventDefault();
     agent.Comments.create(slug, {
-      body: setInputBody
+      body: setBody
     }).then((payload) => {
       onSubmit(payload);
     });
@@ -37,7 +37,7 @@ const CommentInput = (props) => {
           className="form-control"
           placeholder="Write a comment..."
           value={body}
-          onChange={setBody}
+          onChange={setInputBody}
           rows="3"
         ></textarea>
       </div>
